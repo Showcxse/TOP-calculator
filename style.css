@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#ffffff 1.1rem, #ccc 1.2rem);
+    background-size: 100% 1.2rem;
+}
+
+.calc_container {
+    width: 420px;
+    height: 750px;
+    background-color:rgb(114, 116, 126);
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 80px;
+}
+
+.calculator {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+    background-color: #979aa7;
+    border-radius: 20px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
+    border: 2px solid black;
+}
+
+.display {
+    width: 90%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+    background-color:rgb(28, 32, 31);
+    height: 144px;
+    margin: 40px 20px 0 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-end;
+    color: #fff;
+    padding: 10px;
+}
+
+.display_upper {
+    font-size: 1.5rem;
+    color: #fff;
+    height: 50%;
+}
+
+.display_lower {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.buttons {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    padding: 20px;
+    margin-top: 20px;
+
+}
+
+.btn:last-child {
+    grid-column: span 2;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+    background-color: #124566;
+    border-radius: 25%;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn:hover {
+    background-color: #ccc;
+    color: #124566;
+}
+
+.operator_btn, #equal-btn {
+    background-color: #b54f2a;
+}
+
+#equal-btn {
+    border-radius: 20%;
+}
+
+.operator_btn:hover, #equal-btn:hover {
+    background-color: #ccc;
+    color: #b54f2a;
+}
+
+.active {
+    background-color: #ccc;
+    color: #b54f2a;
+}
