@@ -16,6 +16,54 @@ let secondNumber = "";
 let hasPercent = false;
 let previousInput = "";
 
+
+//KEYBOARD SUPPORT
+
+window.addEventListener("keydown", (e) => {
+  const key = e.key;
+  if (key >= 0 && key <= 9) {
+    const button = Array.from(numberButtons).find((btn) => btn.textContent === key);
+    if (button) {
+      button.click();
+    }
+  
+  }
+
+  if (["+", "-", "*", "/", "%"].includes(key)) {
+    const operators = { "+": "+", "-": "-", "*": "×", "/": "÷"};
+    const selectedOperator = operators[key];
+    const button = Array.from(operatorButtons).find((btn) => btn.textContent === selectedOperator);
+    if (button) {
+      button.click();
+    }
+  }
+
+  if (key === "Enter") {
+    equalsButton.click();
+  }
+
+  if (key === "Backspace") {
+    if (displayBottom.textContent.length >= 1) {
+      displayBottom.textContent = displayBottom.textContent.slice(0, -1);
+    }
+  }
+
+  if (key === "Escape") {
+    clearAllButton.click();
+  }
+
+  if (key === "c") {
+    clearButton.click();
+  }
+
+  if (key === ".") {
+    decimalButton.click();
+  }
+  if (key === "%") {
+    percentButton.click();
+  }
+});
+
 clearButton.addEventListener("click", () => {
   displayBottom.textContent = "0";
   operatorActive = false;
@@ -157,3 +205,4 @@ const operate = (operator, firstNumber, secondNumber) => {
       }
   }
 };
+
